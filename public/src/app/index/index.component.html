@@ -1,0 +1,14 @@
+
+<h1>Products List</h1>
+
+<div class="row text-center">
+  <div *ngFor="let product of products" class=" m-2 card col-5 py-5">
+    <img src="{{product.imgUrl}}" alt="">
+    <p>{{product.title}}</p>
+    <p>{{product.price | currency:'USD':'symbol'}}</p>
+    <button (click)="toEditPage(product)" class="my-2 btn btn-info">Edit</button>
+    <button (click)="deleteProduct(product)" class="btn btn-danger">Delete</button>
+  </div>
+  
+
+</div>

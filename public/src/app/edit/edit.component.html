@@ -1,0 +1,12 @@
+
+<h1>Edit product</h1>
+<form class="font-weight-bold form-group p-2">
+  <p *ngIf="errors['title']" class="text-danger">{{errors['title']}}</p>
+  <label class="row">Title: <input class="col-6 ml-auto" type="text" name="productToEdit.title"  [(ngModel)]="productToEdit.title"></label>
+  <p *ngIf="errors['price']" class="text-danger">{{errors['price']}}</p>
+  <label class="row">Price: <input class="col-6 ml-auto" type="text" name="productToEdit.price"  [(ngModel)]="productToEdit.price"></label>
+  <label class="row">Image url: <input class="col-6 ml-auto" type="text" name="productToEdit.imgUrl" [(ngModel)]="productToEdit.imgUrl"></label>
+ 
+  <button (click)="postUpdateToServer()" class="btn btn-success mr-2">Update</button>
+  <button [routerLink]="['/products']" class="btn btn-danger">Cancel</button>
+</form>

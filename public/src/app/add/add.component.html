@@ -1,0 +1,15 @@
+
+<h1>Create a new product</h1>
+<form class="font-weight-bold form-group p-2">
+  <p *ngIf="errors['title']" class="text-danger">{{errors['title']}}</p>
+  <label class="row">Title: <input class="col-6 ml-auto" type="text" 
+    name="productToPost.title" [(ngModel)]="productToPost.title"  ></label>
+  <p *ngIf="errors['price']" class="text-danger">{{errors['price'] }}</p>
+  <label class="row">Price: <input class="col-6 ml-auto" type="text" 
+    name="productToPost.price" [(ngModel)]="productToPost.price" ></label>
+  <label class="row">Image url: <input class="col-6 ml-auto" type="text"
+     name="productToPost.imageUrl" [(ngModel)]="productToPost.imageUrl"></label>
+ 
+  <button (click)="postToServer()" class="btn btn-success mr-2">Create</button>
+  <button [routerLink]="['/products']" class="btn btn-danger">Cancel</button>
+</form>
